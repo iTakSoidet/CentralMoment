@@ -36,7 +36,7 @@ uses Unit2, OKCANCL2;
 {$R *.dfm}
   Procedure Soob;
 begin
- ShowMessage ('‘¿…À Õ≈ ¬€¡–¿Õ');
+ ShowMessage ('–ù–µ –≤—ã–±—Ä–∞–Ω —Ñ–∞–π–ª');
 end;
 
 //---------//
