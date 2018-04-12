@@ -25,7 +25,7 @@ var
   Form1: TForm1;
   FI: TextFile;
   i,j,w,k,g: integer;
-  a: array[1..1000] of integer;
+  a: array[1..1000] of real;
   p: real;
   M,Z,t,l,o,D,r,C: double;
 
@@ -54,7 +54,7 @@ if OpenDialog1.Execute then
      i:=0;
      while (not EOF(FI)) do
      begin
-         i:=i+1;
+        inc(i);
        Read(FI, a[i]);
           w:=i;
      end;
