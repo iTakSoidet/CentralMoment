@@ -17,6 +17,7 @@ type
     Edit3: TEdit;
     Edit4: TEdit;
     Label5: TLabel;
+    procedure BitBtn1Click(Sender: TObject);
    
 
     
@@ -32,5 +33,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.BitBtn1Click(Sender: TObject);
+begin
+ Close;
+end;
 
 end.
