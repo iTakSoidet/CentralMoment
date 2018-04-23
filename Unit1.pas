@@ -49,12 +49,12 @@ uses Unit2, OKCANCL2, Unit4;
 {$R *.dfm}
   Procedure Soob;
 begin
- ShowMessage ('ФАЙЛ НЕ ВЫБРАН');
+ ShowMessage ('Г”ГЂГ‰Г‹ ГЌГ… Г‚Г›ГЃГђГЂГЌ');
 end;
-//--математическое ожидание--//
+//--Г¬Г ГІГҐГ¬Г ГІГЁГ·ГҐГ±ГЄГ®ГҐ Г®Г¦ГЁГ¤Г Г­ГЁГҐ--//
 procedure MMX (var M:Double; var q,w:Integer);
 begin
- // Form1.Label3.Caption:= FloatToStr(p);
+ 
      M:=0;
      t:=0;
       for i:= q to w do
@@ -63,7 +63,7 @@ begin
         M:= M+t;
        end;
 end;
-//--остальные характеристики--//
+//--Г®Г±ГІГ Г«ГјГ­Г»ГҐ ГµГ Г°Г ГЄГІГҐГ°ГЁГ±ГІГЁГЄГЁ--//
 procedure DMX(var D,C,Z:double; var q,w:Integer);
 begin
   Z:=0;
@@ -114,12 +114,12 @@ If  OKRightDlg2.ShowModal = mrOK
      form2.Show;
    q:=1;
   DMX(D,C,Z,q,w);
- Form2.Label5.Caption:= 'ЦЕНТРАЛЬНЫЙ МОМЕНТ '+ IntToStr(k)+ '-ГО ПОРЯДКА = ';
+ Form2.Label5.Caption:= 'Г–Г…ГЌГ’ГђГЂГ‹ГњГЌГ›Г‰ ГЊГЋГЊГ…ГЌГ’ '+ IntToStr(k)+ '-ГѓГЋ ГЏГЋГђГџГ„ГЉГЂ = ';
  form2.Edit1.Text := FloatToStr(M);
  form2.Edit2.Text := FloatToStr(D);
  form2.Edit3.Text := FloatToStr(C);
  form2.Edit4.Text := FloatToStr(Z);
-   Label1.Caption := 'Время работы программы = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
+   Label1.Caption := 'Г‚Г°ГҐГ¬Гї Г°Г ГЎГ®ГІГ» ГЇГ°Г®ГЈГ°Г Г¬Г¬Г» = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
 end;
  
 procedure TForm1.Button4Click(Sender: TObject);
@@ -135,7 +135,6 @@ begin
   if (FileNum = 2) then w2:= i;
   if (FileNum = 3) then w3:= i;
  end;
- // memo1.Lines.Add('w1 = ' + IntToStr(w1)+ 'w2 = '+ IntToStr(w2) +  'w3 = ' + IntToStr(w3)) ;
 
     N1 := Tnew.Create(false);
     N1.FreeOnTerminate:=true;
@@ -151,24 +150,18 @@ end;
 procedure TForm1.btn1Click(Sender: TObject);
 begin
   Form4.Show;
-  { memo1.Lines.Add('M1 = ' + FloattoStr(M1));
-   memo1.Lines.Add('M2 = ' + FloatToStr(M2));
-   memo1.Lines.Add('M3 = ' + FloattoStr(M3)); }
-   MM:=M1+M2+M3;
+    MM:=M1+M2+M3;
    Form4.edit1.text := FloatToStr(MM);
-  { memo1.Lines.Add('D1 = ' + FloattoStr(D1));
-   memo1.Lines.Add('D2 = ' + FloatToStr(D2));
-   memo1.Lines.Add('D3 = ' + FloattoStr(D3));  }
+ 
    DD:= D1+D2+D3;
    CC:=C1+C2+C3;
    ZZ:=Z1+Z2+Z3;
-  //  memo1.Lines.Add(FloattoStr(CC));
- //   memo1.Lines.Add(FloattoStr(ZZ));
-    form4.lbl4.Caption := 'ЦЕНТРАЛЬНЫЙ МОМЕНТ '+ IntToStr(k)+ '-ГО ПОРЯДКА = ';
+
+    form4.lbl4.Caption := 'Г–Г…ГЌГ’ГђГЂГ‹ГњГЌГ›Г‰ ГЊГЋГЊГ…ГЌГ’ '+ IntToStr(k)+ '-ГѓГЋ ГЏГЋГђГџГ„ГЉГЂ = ';
     Form4.edt2.text := FloatToStr(DD);
     Form4.edt3.text := FloatToStr(CC);
     Form4.edt4.text := FloatToStr(ZZ);
- Label2.Caption := 'Время работы программы в потоках = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
+ Label2.Caption := 'Г‚Г°ГҐГ¬Гї Г°Г ГЎГ®ГІГ» ГЇГ°Г®ГЈГ°Г Г¬Г¬Г» Гў ГЇГ®ГІГ®ГЄГ Гµ = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
 end;
 
 
