@@ -83,7 +83,6 @@ procedure TForm1.Button1Click(Sender: TObject);
 var k: integer;  B,f,t1 :string;
 begin
 
-//Label1.Caption := FormatDateTime('hh:nn:ss:zzz', 0);
 Timer1.Enabled := True;
   if OpenDialog1.Execute then
      B:=OpenDialog1.FileName
@@ -114,12 +113,12 @@ If  OKRightDlg2.ShowModal = mrOK
      form2.Show;
    q:=1;
   DMX(D,C,Z,q,w);
- Form2.Label5.Caption:= 'ÖÅÍÒÐÀËÜÍÛÉ ÌÎÌÅÍÒ '+ IntToStr(k)+ '-ÃÎ ÏÎÐßÄÊÀ = ';
+ Form2.Label5.Caption:= 'ЦЕНТРАЛЬНЫЙ МОМЕНТ '+ IntToStr(k)+ '-го ПОРЯДКА = ';
  form2.Edit1.Text := FloatToStr(M);
  form2.Edit2.Text := FloatToStr(D);
  form2.Edit3.Text := FloatToStr(C);
  form2.Edit4.Text := FloatToStr(Z);
-   Label1.Caption := 'Âðåìÿ ðàáîòû ïðîãðàììû = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
+   Label1.Caption := 'Время работы программы = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
 end;
  
 procedure TForm1.Button4Click(Sender: TObject);
@@ -157,11 +156,11 @@ begin
    CC:=C1+C2+C3;
    ZZ:=Z1+Z2+Z3;
 
-    form4.lbl4.Caption := 'ÖÅÍÒÐÀËÜÍÛÉ ÌÎÌÅÍÒ '+ IntToStr(k)+ '-ÃÎ ÏÎÐßÄÊÀ = ';
+    form4.lbl4.Caption := 'ЦЕНТРАЛЬНЫЙ МОМЕНТ '+ IntToStr(k)+ '-го ПОРЯДКА = ';
     Form4.edt2.text := FloatToStr(DD);
     Form4.edt3.text := FloatToStr(CC);
     Form4.edt4.text := FloatToStr(ZZ);
- Label2.Caption := 'Âðåìÿ ðàáîòû ïðîãðàììû â ïîòîêàõ = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
+ Label2.Caption := 'Время работы программы в потоках = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
 end;
 
 
