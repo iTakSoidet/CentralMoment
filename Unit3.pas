@@ -63,7 +63,6 @@ end;
 procedure Tnew.DoWork;
 var i: integer;
 begin
-//p1:=1/w1;       // вероятность!
 q:=1;
   MMX(M1,q,w1);
   DMX(D1,C1,Z1,q,w1);
@@ -74,7 +73,6 @@ end;
  procedure Tnew2.DoWork;
  var i: integer;
  begin
-  {p2:=1/(w2-(w1+1));  }     // вероятнось
   q:= w1+1;
    MMX(M2,q,w2);
    DMX(D2,C2,Z2,q,w2);
@@ -84,7 +82,6 @@ end;
 procedure Tnew3.DoWork;
 var i: integer; t:double;
 begin
- {p:=1/(w3-(w2+1));       // вероятность        }
  q:= w2+1;
   MMX(M3,q,w3);
   DMX(D3,C3,Z3,q,w3);
