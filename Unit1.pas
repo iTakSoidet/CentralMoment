@@ -47,11 +47,12 @@ implementation
 uses Unit2, OKCANCL2, Unit4;
 
 {$R *.dfm}
+
   Procedure Soob;
 begin
- ShowMessage ('ÔÀÉË ÍÅ ÂÛÁÐÀÍ');
+ ShowMessage ('file not found');
 end;
-//--ìàòåìàòè÷åñêîå îæèäàíèå--//
+
 procedure MMX (var M:Double; var q,w:Integer);
 begin
  
@@ -63,7 +64,7 @@ begin
         M:= M+t;
        end;
 end;
-//--îñòàëüíûå õàðàêòåðèñòèêè--//
+
 procedure DMX(var D,C,Z:double; var q,w:Integer);
 begin
   Z:=0;
@@ -78,7 +79,7 @@ begin
     end;
     C:= sqrt(D);
 end;
-//---------//
+
 procedure TForm1.Button1Click(Sender: TObject);
 var k: integer;  B,f,t1 :string;
 begin
@@ -104,7 +105,7 @@ p:=1/w;
 q:=1;
 MMX(M,q,w);
 end;
-//--//
+
 procedure TForm1.Button3Click(Sender: TObject);
 begin
 If  OKRightDlg2.ShowModal = mrOK
@@ -113,12 +114,12 @@ If  OKRightDlg2.ShowModal = mrOK
      form2.Show;
    q:=1;
   DMX(D,C,Z,q,w);
- Form2.Label5.Caption:= 'ЦЕНТРАЛЬНЫЙ МОМЕНТ '+ IntToStr(k)+ '-го ПОРЯДКА = ';
+ Form2.Label5.Caption:= 'Central moment '+ IntToStr(k)+ '-go poryadka = ';
  form2.Edit1.Text := FloatToStr(M);
  form2.Edit2.Text := FloatToStr(D);
  form2.Edit3.Text := FloatToStr(C);
  form2.Edit4.Text := FloatToStr(Z);
-   Label1.Caption := 'Время работы программы = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
+   Label1.Caption := 'Vremya vypolneniya programmy = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
 end;
  
 procedure TForm1.Button4Click(Sender: TObject);
@@ -151,16 +152,14 @@ begin
   Form4.Show;
     MM:=M1+M2+M3;
    Form4.edit1.text := FloatToStr(MM);
- 
    DD:= D1+D2+D3;
-   CC:=C1+C2+C3;
+   CC:=sqrt(DD);
    ZZ:=Z1+Z2+Z3;
-
-    form4.lbl4.Caption := 'ЦЕНТРАЛЬНЫЙ МОМЕНТ '+ IntToStr(k)+ '-го ПОРЯДКА = ';
+    form4.lbl4.Caption := 'Central moment '+ IntToStr(k)+ '-go poryadka =  ';
     Form4.edt2.text := FloatToStr(DD);
     Form4.edt3.text := FloatToStr(CC);
     Form4.edt4.text := FloatToStr(ZZ);
- Label2.Caption := 'Время работы программы в потоках = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
+ Label2.Caption := 'Vremya vypolneniya programmy v potokah = '+FormatDateTime('hh:nn:ss:zzz', Now - TimeStart);
 end;
 
 
